@@ -2,7 +2,7 @@ name: run ChronoScraper.py
 
 on:
   schedule:
-    - cron: "*/30 * * * *"
+    - cron: "*/15 * * * *"
 
 jobs:
   build:
@@ -18,7 +18,8 @@ jobs:
 
       - name: install python packages
         run: |
-          apt-get install -y chromium-browser
+          sudo apt-get update
+          sudo apt-get install -y chromium-browser
           python -m pip install --upgrade pip
           pip install -r requirements.txt
 
