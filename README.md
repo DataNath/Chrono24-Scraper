@@ -1,1 +1,1 @@
-"# Chrono24-Scraper" 
+"# Chrono24-Scraper"
