@@ -51,8 +51,8 @@ engine = URL(
 )
 
 # Set driver location and provide website URL:
-service = Service(executable_path="/usr/local/bin/chromedriver")
-driver = webdriver.Chrome(service=service)
+# service = Service(executable_path="/usr/local/bin/chromedriver")
+driver = webdriver.Chrome(executable_path="/usr/local/bin/chromedriver")
 
 driver.get("https://www.chrono24.co.uk/")
 wait = WebDriverWait(driver, 10)
