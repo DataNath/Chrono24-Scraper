@@ -30,4 +30,5 @@ jobs:
           DATABASE: ${{ secrets.DATABASE }}
           SCHEMA: ${{ secrets.SCHEMA }}
           ROLE: ${{ secrets.ROLE }}
-        run: python Chronoscraper.py
+        run: |
+          python Chronoscraper.py
