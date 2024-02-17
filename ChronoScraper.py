@@ -9,6 +9,8 @@ from snowflake.connector import connect
 from snowflake.sqlalchemy import URL
 from datetime import datetime
 from snowflake.connector.pandas_tools import pd_writer
+from webdriver_manager.chrome import ChromeDriverManager
+from webdriver_manager.core.os_manager import ChromeType
 import pandas as pd
 import json
 import time
@@ -52,7 +54,8 @@ engine = URL(
 
 # Set driver location and provide website URL:
 # service = Service(executable_path="/usr/local/bin/chromedriver")
-driver = webdriver.Chrome(executable_path="/usr/local/bin/chromedriver")
+driver_path = ChromeDriverManager(chrome_type=ChromeType.CHROMIUM).install()
+driver = webdriver.Chrome(driver_path)
 
 driver.get("https://www.chrono24.co.uk/")
 wait = WebDriverWait(driver, 10)
