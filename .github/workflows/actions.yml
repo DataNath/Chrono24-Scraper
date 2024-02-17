@@ -9,7 +9,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: checkout repo content
-        uses: actions/checkout@v2
+        uses: actions/checkout@v4
 
       - name: setup python
         uses: actions/setup-python@v4
@@ -31,4 +31,4 @@ jobs:
           SCHEMA: ${{ secrets.SCHEMA }}
           ROLE: ${{ secrets.ROLE }}
         run: |
-          python Chronoscraper.py
+          python ChronoScraper.py
