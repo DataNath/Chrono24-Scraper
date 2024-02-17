@@ -11,6 +11,7 @@ from datetime import datetime
 from snowflake.connector.pandas_tools import pd_writer
 from webdriver_manager.chrome import ChromeDriverManager
 from webdriver_manager.core.os_manager import ChromeType
+from selenium.webdriver.chrome.options import Options
 import pandas as pd
 import json
 import time
@@ -54,8 +55,12 @@ engine = URL(
 
 # Set driver location and provide website URL:
 # service = Service(executable_path="/usr/local/bin/chromedriver")
+chrome_options = Options()
+chrome_options.add_argument('--no-sandbox')
+chrome_options.add_argument('--headless')
+chrome_options.add_argument('--disable-dev-shm-usage')
 driver_path = Service(ChromeDriverManager(chrome_type=ChromeType.CHROMIUM).install())
-driver = webdriver.Chrome(service=driver_path)
+driver = webdriver.Chrome(service=driver_path, chrome_options=chrome_options)
 
 driver.get("https://www.chrono24.co.uk/")
 wait = WebDriverWait(driver, 10)
