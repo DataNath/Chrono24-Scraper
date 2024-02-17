@@ -7,13 +7,12 @@ from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 from snowflake.connector import connect
 from snowflake.sqlalchemy import URL
-from datetime import datetime
 from snowflake.connector.pandas_tools import pd_writer
 from webdriver_manager.chrome import ChromeDriverManager
 from webdriver_manager.core.os_manager import ChromeType
 from selenium.webdriver.chrome.options import Options
 import pandas as pd
-import json
+# import json - Only needed for local testing
 import time
 import os
 
@@ -169,7 +168,7 @@ finally:
 
 # Create a dataframe from the two lists:
 df = pd.DataFrame(data)
-df["As of date"] = datetime.now()
+df["As of date"] = pd.Timestamp.now()
 
 print("Dataframe created...")
 print(df)
