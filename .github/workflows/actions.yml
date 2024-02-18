@@ -16,7 +16,7 @@ jobs:
         with:
           python-version: "3.12.2"
 
-      - name: install python packages
+      - name: set up environment
         run: |
           sudo apt-get update
           sudo apt-get install -y chromium-browser
