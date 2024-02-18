@@ -168,7 +168,7 @@ finally:
 
 # Create a dataframe from the two lists:
 df = pd.DataFrame(data)
-df["As of date"] = pd.Timestamp.now()
+df["As of date"] = pd.Timestamp.now().replace(microsecond=0)
 
 print("Dataframe created...")
 
