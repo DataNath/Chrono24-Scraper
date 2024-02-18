@@ -171,7 +171,6 @@ df = pd.DataFrame(data)
 df["As of date"] = pd.Timestamp.now()
 
 print("Dataframe created...")
-print(df)
 
 """
 # Output a local copy of the dataframe - local testing:
