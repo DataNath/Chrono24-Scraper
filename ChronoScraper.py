@@ -133,13 +133,14 @@ try:
 
             # Pass through list of containers, finding the description and price of each - pass these into the empty lists above:
             for container in containers:
+                driver.execute_script("arguments[0].scrollIntoView(true);", container)
                 desc = container.find_element(
                     By.XPATH, ".//div[@class='text-sm text-sm-md text-ellipsis m-b-2']"
                 )
                 price = container.find_element(By.XPATH, ".//div[@class='text-bold']")
                 img = container.find_element(
                     By.XPATH,
-                    ".//img",
+                    ".//div[@class='js-carousel-cell carousel-cell d-flex is-selected']//img",
                 ).get_attribute("src")
                 link = container.find_element(By.XPATH, ".//a").get_attribute("href")
 
@@ -150,11 +151,11 @@ try:
                 data["Image"].append(img)
                 data["Link"].append(link)
 
-            # Pause 2 seconds before pressing the 'next page' button if present:
+            # Pause a second before pressing the 'next page' button if present:
             next_button = WebDriverWait(driver, 10).until(
                 EC.element_to_be_clickable((By.XPATH, "//a[@class='paging-next']"))
             )
-            time.sleep(2)
+            time.sleep(1)
             next_button.click()
 
         except:
