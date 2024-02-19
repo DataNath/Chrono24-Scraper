@@ -8,10 +8,10 @@ This is a personal project, the main object of which was to learn and improve my
 
 ## Project overview
 
-- **Web Scraping**: Utilises the Selenium package in Python to web scrape data 🐍
-- **Data Storage**: Pushes data to a Snowflake table for storage and analysis ❄️
-- **Automation**: Leverages GitHub Actions to automate daily script execution 🤖
-- **Visualization**: Built a Tableau dashboard to visualise data from the Snowflake table 📊
+- **Web Scraping**: Utilised the Selenium package in Python to web scrape data 🐍
+- **Data Storage**: Script pushes data to a Snowflake table for storage and analysis ❄️
+- **Automation**: Leveraged GitHub Actions to automate daily script execution 🤖
+- **Visualisation**: Built a Tableau dashboard to visualise data from the Snowflake table 📊
 - **Automatic Refresh**: Configured Tableau extract refresh and email subscription for daily updates and KPI monitoring 📧
 
 ## Contributions
