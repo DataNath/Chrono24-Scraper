@@ -126,7 +126,7 @@ try:
 
             containers = watches.find_elements(
                 By.XPATH,
-                "//div[@class='article-item-container wt-search-result article-image-carousel']",
+                "//div[@class='js-article-item-container article-item-container wt-search-result article-image-carousel']",
             )
 
             # print(containers[1].get_attribute("innerHTML")) - Checking list values are distinct
