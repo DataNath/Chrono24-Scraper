@@ -58,7 +58,7 @@ chrome_options = Options()
 chrome_options.add_argument('--no-sandbox')
 chrome_options.add_argument('--headless')
 chrome_options.add_argument('--disable-dev-shm-usage')
-driver_path = Service(ChromeDriverManager(chrome_type=ChromeType.CHROMIUM).install())
+driver_path = Service(ChromeDriverManager(chrome_type=ChromeType.CHROMIUM, browser_version="121.0.6167.184").install())
 driver = webdriver.Chrome(service=driver_path, options=chrome_options)
 
 driver.get("https://www.chrono24.co.uk/")
